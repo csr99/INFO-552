@@ -1,0 +1,383 @@
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+nav ul li a.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Home Page Specific */
+.purpose blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.highlights ul {
+    list-style-position: inside;
+}
+
+/* About Page Specific */
+.about .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.about .timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.about .timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.about .timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.about .timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.about .timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.about .timeline-item:nth-child(odd)::after {
+    right: -12px;
+}
+
+.about .timeline-item:nth-child(even)::after {
+    left: -12px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skill-category {
+    background: var(--light-color);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Resume Page Specific */
+.resume .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.resume section {
+    margin-bottom: 2rem;
+}
+
+.resume .education-item, .resume .job, .resume .project {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.resume .education-item:last-child, 
+.resume .job:last-child, 
+.resume .project:last-child {
+    border-bottom: none;
+}
+
+.resume .skills-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.download-resume {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.download-resume a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.download-resume a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Projects Page Specific */
+.projects-page .project-card {
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.projects-page .project-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects-page .project-details img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.projects-page .project-description {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+}
+
+.tech-used {
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: var(--light-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Associations Page Specific */
+.associations .association-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.association-logo {
+    flex: 0 0 150px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+}
+
+.association-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.association-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.5rem;
+}
+
+.visit-site {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+}
+
+.visit-site:hover {
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.3rem 0;
+    }
+
+    .about .timeline::after {
+        left: 31px;
+    }
+
+    .about .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .about .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .about .timeline-item::after {
+        left: 21px;
+    }
+
+    .about .timeline-item:nth-child(odd)::after,
+    .about .timeline-item:nth-child(even)::after {
+        left: 21px;
+    }
+
+    .projects-page .project-details,
+    .associations .association-card {
+        flex-direction: column;
+    }
+
+    .projects-page .project-details img,
+    .association-logo {
+        width: 100%;
+        max-width: none;
+    }
+}
